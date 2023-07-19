@@ -8,7 +8,6 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
-import kotlin.math.log
 
 class WaveFormView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
@@ -32,14 +31,14 @@ class WaveFormView(context: Context, attrs: AttributeSet) : View(context, attrs)
 
     fun addAmplitude(amp: Float) {
 
-        var norm = Math.min(amp.toInt()/7, 400).toFloat()
+        var norm = Math.min(amp.toInt() / 7, 400).toFloat()
         Log.d("TAG", "addAmplitude() called with: amp = $norm")
         amplitudes.add(norm)
         spikes.clear()
         var amps = amplitudes.takeLast(maxSpike)
         for (i in amps.indices) {
             var left = sw - i * (w + d)
-            val top = sh/2 - amps[i]/2
+            val top = sh / 2 - amps[i] / 2
             val right = left + w
             val bottom = top + amps[i]
             spikes.add(RectF(left, top, right, bottom))
@@ -55,6 +54,12 @@ class WaveFormView(context: Context, attrs: AttributeSet) : View(context, attrs)
             canvas?.drawRoundRect(it, radius, radius, paint)
         }
 
+    }
+
+    fun clearData() {
+        amplitudes.clear()
+        spikes.clear()
+        invalidate()
     }
 
 }

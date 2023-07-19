@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bts_save_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_cornertop"
+    android:orientation="vertical"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Record"
+        android:textAlignment="center"
+        android:textSize="26sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fileNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E3E3E3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="24dp"
+            android:backgroundTint="#818181"
+            android:text="Cancel "
+            android:textColor="#1B1B1B"
+            app:cornerRadius="16dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="24dp"
+            android:backgroundTint="#2196F3"
+            android:text="save "
+            android:textColor="#FFFFFF"
+            app:cornerRadius="16dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
